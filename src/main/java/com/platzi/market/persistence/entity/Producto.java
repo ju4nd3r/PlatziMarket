@@ -30,6 +30,14 @@ public class Producto {
 
     private Boolean estado;
 
+    /*
+    Las propiedades de insertable=false y updatable=false de JoinColumn quieren decir que
+    a traves de la relación no se va a insetar ni actualizar ninguna categoría
+     */
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
     public Integer getIdProducto() {
         return idProducto;
     }
